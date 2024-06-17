@@ -1,0 +1,29 @@
+<!-- Bir class'in icinde bir tek test methodu varsa o methodu calistirmak icin class'i calistirmak yeterlidir.
+
+method secimi birden fazla test methodu barindiran class'larda spesifik olarak bazi methodlari calistirmak veya
+spesifik olarak belirlenen test methodlari disinda tum methodlari calistirmak icin kullanilir.
+
+Eger bir xml dosyasi ile istedigimiz farkli package,class veya class'Daki methodlari calistirmak istersek hiyerarside
+uygun yerden yapiyi calistirabiliriz
+
+-->
+
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="istenen test Methodlarini calistirma">
+    <test name="negatif testler">
+        <classes>
+            <class name="tests._2_POM._6_qualitydemyNegatifLoginTest">
+                <methods>
+                    <!-- sadece verilen methodlari calismasi icin include-->
+                    <include name="gecersizSifreTesti"></include> // o class'a ait gecersiz sifre testi calissin istiyorum
+                </methods>
+            </class>
+            <class name="tests._1_TestNGFramework._01_Priority">
+                <methods>
+                    <!-- verilen methodlar disindaki tum methodlari calistirmasi icin exclude-->
+                    <exclude name="youtubeTesti"></exclude> // o class'A ait youtubetest haricindeki methodlar calissin dedim
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

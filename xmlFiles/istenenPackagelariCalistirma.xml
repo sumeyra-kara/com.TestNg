@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="istenen package'lari calistirma">
+    <test name="POM testleri">
+        <packages>
+            <package name="tests._2_POM"></package>
+            <package name="tests._5_HandleWindow_ActionClass"></package>
+        </packages>
+    </test>
+</suite>

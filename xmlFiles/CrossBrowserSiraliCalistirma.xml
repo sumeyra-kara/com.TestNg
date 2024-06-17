@@ -1,0 +1,50 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!--
+    Cross Browser test bir uygulamayi farkli browserlar ile test etmek demektir
+    Testleri sirali (sequential) veya parallel olarak yapabiliriz
+
+    xml dosyasindan calistigimiz testler sirasiyla calisir.Her test driver class'indan gelen driver'i kullanir.
+    Driver class'i da driver objesini olustururken hangi browser'in kullanilacagini configuration.properties
+    objesinden alir.
+
+    Standart xml dosyasi, standart classlar ve standart olarak kullandigimiz Driver class'i ile Cross Browser Test
+    yapmak MUMKUN DEGILDIR.
+
+    Cross browser cok ozel bir islem oldugundan tum classlar icin degil,belirlenmis az sayida class icin uygulanir.
+    Bunun icin Cross browser ile test yapmak icin calisan sistemde degisiklik yapmak zorundayiz
+
+    1- baslamgic noktamiz xml dosyasi oldugu icin degisiklige buradan basliyoruz
+ -->
+
+
+<suite name="Istenen class'lari calistirma">
+
+    <test name="chrome Test">
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="tests._12_CrossBrowserTests._1_AmazonSearch"></class>
+            <class name="tests._12_CrossBrowserTests._2_AlertsTesti"></class>
+            <class name="tests._12_CrossBrowserTests._3_BasicAuthentication"></class>
+        </classes>
+    </test>
+
+    <test name="fireFox Test">
+        <parameter name="browser" value="firefox"></parameter>
+        <classes>
+            <class name="tests._12_CrossBrowserTests._1_AmazonSearch"></class>
+            <class name="tests._12_CrossBrowserTests._2_AlertsTesti"></class>
+            <class name="tests._12_CrossBrowserTests._3_BasicAuthentication"></class>
+        </classes>
+    </test>
+
+    <test name="edge Test">
+        <parameter name="browser" value="edge"></parameter>
+
+        <classes>
+            <class name="tests._12_CrossBrowserTests._1_AmazonSearch"></class>
+            <class name="tests._12_CrossBrowserTests._2_AlertsTesti"></class>
+            <class name="tests._12_CrossBrowserTests._3_BasicAuthentication"></class>
+        </classes>
+    </test>
+
+</suite>
